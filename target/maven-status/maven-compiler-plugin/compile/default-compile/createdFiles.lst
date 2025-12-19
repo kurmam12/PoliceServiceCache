@@ -1,0 +1,5 @@
+com\cog\pract\police\PoliceServiceCacheApplication.class
+com\cog\pract\police\repo\PoliceDetailsRepository.class
+com\cog\pract\police\model\PoliceDetails.class
+com\cog\pract\police\service\PoliceDetailsService.class
+com\cog\pract\police\controller\PoliceServiceController.class
