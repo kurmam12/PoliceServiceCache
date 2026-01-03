@@ -37,6 +37,21 @@ public class PoliceDetailsService {
 	    }
 	
 	
+	    public Optional<PoliceDetails> getPoliceDetails(Long badgeId) {
+	    	return policeDetailsRepository.findById(badgeId);
+	    }
 	
-
+	    public List<PoliceDetails> getACPDetails() {
+	    	List<PoliceDetails> myRole= policeDetailsRepository.findAll()
+	    			.stream().
+	    			filter(p -> p.getPoliceRank()!=null && p.getPoliceRank().startsWith("A")).toList();
+	    	
+	    	return myRole;
+	    }
+	    
+	    public List<String> getSortedNameDetails(){
+	    	List<String> sortedPoliceDetails = policeDetailsRepository.findAll()
+	    			.stream().map(p->p.getFirstName().concat(p.getLastName())).toList();
+	    	return sortedPoliceDetails;
+	    }
 }
